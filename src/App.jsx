@@ -9,6 +9,7 @@ import ActorsMap from "./components/ActorsMap";
 function App() {
   const [actresses, setActresses] = useState([]);
   const [actors, setActors] = useState([]);
+  const [render, setRender] = useState("both");
 
   useEffect(() => {
     //* axios request per ottenere i dati delle attrici
@@ -27,17 +28,25 @@ function App() {
   return (
     <>
       <Header />
+      <button onClick={() => setRender("actresses")}>
+        Show Only Actresses
+      </button>
+      <button onClick={() => setRender("actors")}>Show Only Actors</button>
+      <button onClick={() => setRender("both")}>
+        Show Both Actresses and Actors
+      </button>
       <div className="container flex">
-        {/* //todo button prototype to switch between actors and actresses */}
-        {/* <button>Press to Switch to Actors</button> */}
-        {/* //todo button prototype to see both */}
-        {/* <button>Press to See both </button> */}
         <div className="row flex">
-          <ActressesMap actresses={actresses} />
+          {(render == "actresses" || render === "both") && (
+            <div className="row flex">
+              <ActressesMap actresses={actresses} />
+            </div>
+          )}
         </div>
-        {/* //? dividere entrambi in due row parallele per rendering più fluido?  */}
         <div className="row flex">
-          <ActorsMap actors={actors} />
+          {(render == "actors" || render === "both") && (
+            <ActorsMap actors={actors} />
+          )}
         </div>
       </div>
     </>
