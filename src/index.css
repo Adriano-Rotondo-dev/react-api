@@ -25,7 +25,19 @@ button {
   color: white;
   min-width: 15rem;
 }
-
+.selectContainer {
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+input {
+  min-height: 2rem;
+  min-width: 15rem;
+}
+.btnContainer {
+  flex-direction: column;
+}
 .container {
   justify-items: center;
   flex-direction: row;
