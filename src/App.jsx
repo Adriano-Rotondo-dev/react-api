@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-//* importo i componenti appena creati per la visualizzazione delle card
+//* importo i componenti
+import Header from "./components/Header";
 import ActressesMap from "./components/ActressesMap";
 import ActorsMap from "./components/ActorsMap";
 
@@ -25,15 +26,17 @@ function App() {
 
   return (
     <>
-      <div className="content flex">
-        <h1>Famous Actresses</h1>
+      <Header />
+      <div className="container flex">
         {/* //todo button prototype to switch between actors and actresses */}
         {/* <button>Press to Switch to Actors</button> */}
         {/* //todo button prototype to see both */}
         {/* <button>Press to See both </button> */}
         <div className="row flex">
           <ActressesMap actresses={actresses} />
-          {/* //? dividere entrambi in due row parallele per rendering più fluido?  */}
+        </div>
+        {/* //? dividere entrambi in due row parallele per rendering più fluido?  */}
+        <div className="row flex">
           <ActorsMap actors={actors} />
         </div>
       </div>

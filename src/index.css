@@ -6,9 +6,15 @@
 .flex {
   display: flex;
 }
-.content {
+
+header {
+  justify-content: center;
+  padding: 1rem;
+}
+
+.container {
   justify-items: center;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 }
 .row {
