@@ -13,7 +13,8 @@ function App() {
 
   return (
     <>
-      <div className="content">
+      <div className="content flex">
+        <h1>Famous Actresses</h1>
         <div className="row flex">
           {actresses.map((actress) => (
             <div key={actress.id} className="col">
