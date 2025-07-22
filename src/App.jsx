@@ -3,8 +3,8 @@ import axios from "axios";
 
 //* importo i componenti
 import Header from "./components/Header";
-import ActressesMap from "./components/ActressesMap";
-import ActorsMap from "./components/ActorsMap";
+import ActressesMap from "./components/maps/ActressesMap";
+import ActorsMap from "./components/maps/ActorsMap";
 
 function App() {
   const [actresses, setActresses] = useState([]);
@@ -27,14 +27,7 @@ function App() {
 
   return (
     <>
-      <Header />
-      <button onClick={() => setRender("actresses")}>
-        Show Only Actresses
-      </button>
-      <button onClick={() => setRender("actors")}>Show Only Actors</button>
-      <button onClick={() => setRender("both")}>
-        Show Both Actresses and Actors
-      </button>
+      <Header setRender={setRender} />
       <div className="container flex">
         <div className="row flex">
           {(render == "actresses" || render === "both") && (
