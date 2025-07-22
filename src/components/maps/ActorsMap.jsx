@@ -5,9 +5,7 @@ export default function ActorsMap({ actors }) {
         <div key={actor.id} className="col">
           <div className="card">
             <div className="cardHead">
-              <p>
-                <h3>{actor.name}</h3>
-              </p>
+              <h3>{actor.name}</h3>
               <p>Year of Birth {actor.birth_year}</p>
               <p>{actor.nationality}</p>
               <p>{actor.biography}</p>
